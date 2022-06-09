@@ -1,0 +1,22 @@
+10.04.19
+Added Graphs for Sensor Values.
+
+11.04.19
+Added Combo Boxes for Integrationszeit und Periode.
+
+18.04.19
+Seperate class for communication created.
+
+23.04.19
+Class Communication Exception Handling
+
+26.04.19
+color for buttons
+
+30.04.19
+Adjusted GUI for small screen of laptop
+Fixed issues with GUI.
+
+02.05.19
+Changed scale for X axis SensorNo => cm
+

@@ -1,0 +1,1420 @@
+26.07.2018 14:36:36
+LED: NI: 50ms Periode: X
+Sensor 1: R 66 G 0 B 0
+ 
+Sensor 2: R 4095 G 3834 B 4095
+ 
+Sensor 3: R 4095 G 3825 B 4095
+ 
+Sensor 4: R 4095 G 4095 B 4095
+ 
+Sensor 5: R 4095 G 4095 B 4095
+ 
+Sensor 6: R 2530 G 2278 B 2530
+ 
+Sensor 7: R 2531 G 2278 B 2531
+ 
+Sensor 8: R 4095 G 3956 B 4095
+ 
+ 
+ 
+26.07.2018 14:36:41
+LED: NI: 50ms Periode: X
+Sensor 1: R 4095 G 3944 B 4095
+ 
+Sensor 2: R 2786 G 2486 B 2786
+ 
+Sensor 3: R 2168 G 1934 B 2168
+ 
+Sensor 4: R 3770 G 3598 B 3770
+ 
+Sensor 5: R 3766 G 3594 B 3766
+ 
+Sensor 6: R 2528 G 2276 B 2528
+ 
+Sensor 7: R 2532 G 2279 B 2532
+ 
+Sensor 8: R 4095 G 3955 B 4095
+ 
+ 
+ 
+26.07.2018 14:36:44
+LED: NI: 50ms Periode: X
+Sensor 1: R 4095 G 3947 B 4095
+ 
+Sensor 2: R 4095 G 3844 B 4095
+ 
+Sensor 3: R 4095 G 3829 B 4095
+ 
+Sensor 4: R 4095 G 4095 B 4095
+ 
+Sensor 5: R 4095 G 4095 B 4095
+ 
+Sensor 6: R 4095 G 4095 B 4095
+ 
+Sensor 7: R 4095 G 4095 B 4095
+ 
+Sensor 8: R 4095 G 4095 B 4095
+ 
+ 
+ 
+26.07.2018 14:36:48
+LED: NI: 50ms Periode: X
+Sensor 1: R 4095 G 4095 B 4095
+ 
+Sensor 2: R 4095 G 3847 B 4095
+ 
+Sensor 3: R 4095 G 3837 B 4095
+ 
+Sensor 4: R 4095 G 4095 B 4095
+ 
+Sensor 5: R 3768 G 3595 B 3768
+ 
+Sensor 6: R 2532 G 2278 B 2532
+ 
+Sensor 7: R 2529 G 2275 B 2529
+ 
+Sensor 8: R 4095 G 3951 B 4095
+ 
+ 
+ 
+26.07.2018 14:37:03
+LED: NI: 5ms Periode: X
+Sensor 1: R 66 G 0 B 0
+ 
+Sensor 2: R 66 G 0 B 0
+ 
+Sensor 3: R 222 G 198 B 222
+ 
+Sensor 4: R 225 G 200 B 225
+ 
+Sensor 5: R 390 G 372 B 390
+ 
+Sensor 6: R 390 G 372 B 390
+ 
+Sensor 7: R 259 G 233 B 259
+ 
+Sensor 8: R 265 G 238 B 265
+ 
+ 
+ 
+26.07.2018 14:37:05
+LED: NI: 5ms Periode: X
+Sensor 1: R 425 G 408 B 425
+ 
+Sensor 2: R 419 G 402 B 419
+ 
+Sensor 3: R 420 G 374 B 420
+ 
+Sensor 4: R 404 G 360 B 404
+ 
+Sensor 5: R 735 G 700 B 735
+ 
+Sensor 6: R 718 G 684 B 718
+ 
+Sensor 7: R 473 G 425 B 473
+ 
+Sensor 8: R 492 G 443 B 492
+ 
+ 
+ 
+26.07.2018 14:37:07
+LED: NI: 5ms Periode: X
+Sensor 1: R 776 G 744 B 776
+ 
+Sensor 2: R 630 G 604 B 630
+ 
+Sensor 3: R 222 G 198 B 222
+ 
+Sensor 4: R 224 G 200 B 224
+ 
+Sensor 5: R 390 G 371 B 390
+ 
+Sensor 6: R 390 G 372 B 390
+ 
+Sensor 7: R 259 G 233 B 259
+ 
+Sensor 8: R 262 G 236 B 262
+ 
+ 
+ 
+26.07.2018 14:37:08
+LED: NI: 5ms Periode: X
+Sensor 1: R 425 G 408 B 425
+ 
+Sensor 2: R 413 G 396 B 413
+ 
+Sensor 3: R 418 G 373 B 418
+ 
+Sensor 4: R 424 G 378 B 424
+ 
+Sensor 5: R 702 G 669 B 702
+ 
+Sensor 6: R 737 G 703 B 737
+ 
+Sensor 7: R 473 G 425 B 473
+ 
+Sensor 8: R 491 G 442 B 491
+ 
+ 
+ 
+26.07.2018 14:37:08
+LED: NI: 5ms Periode: X
+Sensor 1: R 787 G 756 B 787
+ 
+Sensor 2: R 626 G 601 B 626
+ 
+Sensor 3: R 222 G 198 B 222
+ 
+Sensor 4: R 222 G 198 B 222
+ 
+Sensor 5: R 390 G 371 B 390
+ 
+Sensor 6: R 390 G 371 B 390
+ 
+Sensor 7: R 262 G 235 B 262
+ 
+Sensor 8: R 259 G 233 B 259
+ 
+ 
+ 
+26.07.2018 14:37:09
+LED: NI: 5ms Periode: X
+Sensor 1: R 425 G 408 B 425
+ 
+Sensor 2: R 418 G 401 B 418
+ 
+Sensor 3: R 222 G 198 B 222
+ 
+Sensor 4: R 225 G 200 B 225
+ 
+Sensor 5: R 386 G 368 B 386
+ 
+Sensor 6: R 390 G 371 B 390
+ 
+Sensor 7: R 262 G 235 B 262
+ 
+Sensor 8: R 262 G 235 B 262
+ 
+ 
+ 
+26.07.2018 14:37:10
+LED: NI: 5ms Periode: X
+Sensor 1: R 421 G 404 B 421
+ 
+Sensor 2: R 418 G 401 B 418
+ 
+Sensor 3: R 222 G 198 B 222
+ 
+Sensor 4: R 225 G 200 B 225
+ 
+Sensor 5: R 390 G 372 B 390
+ 
+Sensor 6: R 385 G 367 B 385
+ 
+Sensor 7: R 262 G 236 B 262
+ 
+Sensor 8: R 262 G 236 B 262
+ 
+ 
+ 
+26.07.2018 14:37:10
+LED: NI: 5ms Periode: X
+Sensor 1: R 426 G 408 B 426
+ 
+Sensor 2: R 413 G 396 B 413
+ 
+Sensor 3: R 222 G 198 B 222
+ 
+Sensor 4: R 225 G 200 B 225
+ 
+Sensor 5: R 390 G 371 B 390
+ 
+Sensor 6: R 386 G 368 B 386
+ 
+Sensor 7: R 262 G 236 B 262
+ 
+Sensor 8: R 262 G 236 B 262
+ 
+ 
+ 
+26.07.2018 14:37:11
+LED: NI: 5ms Periode: X
+Sensor 1: R 421 G 404 B 421
+ 
+Sensor 2: R 418 G 401 B 418
+ 
+Sensor 3: R 222 G 198 B 222
+ 
+Sensor 4: R 224 G 200 B 224
+ 
+Sensor 5: R 385 G 367 B 385
+ 
+Sensor 6: R 389 G 371 B 389
+ 
+Sensor 7: R 262 G 235 B 262
+ 
+Sensor 8: R 262 G 235 B 262
+ 
+ 
+ 
+26.07.2018 14:38:39
+LED: N I: 50ms Periode: X
+Sensor 1: R 66 G 0 B 0
+ 
+Sensor 2: R 2128 G 1899 B 2128
+ 
+Sensor 3: R 2128 G 1899 B 2128
+ 
+Sensor 4: R 3678 G 3506 B 3678
+ 
+Sensor 5: R 3678 G 3506 B 3678
+ 
+Sensor 6: R 2471 G 2220 B 2471
+ 
+Sensor 7: R 2477 G 2226 B 2477
+ 
+Sensor 8: R 4023 G 3859 B 4023
+ 
+ 
+ 
+26.07.2018 14:38:44
+LED: N I: 50ms Periode: X
+Sensor 1: R 4012 G 3848 B 4012
+ 
+Sensor 2: R 3797 G 3387 B 3797
+ 
+Sensor 3: R 2127 G 1898 B 2127
+ 
+Sensor 4: R 3674 G 3501 B 3674
+ 
+Sensor 5: R 3678 G 3505 B 3678
+ 
+Sensor 6: R 2472 G 2221 B 2472
+ 
+Sensor 7: R 2472 G 2221 B 2472
+ 
+Sensor 8: R 4018 G 3853 B 4018
+ 
+ 
+ 
+26.07.2018 14:38:46
+LED: N I: 50ms Periode: X
+Sensor 1: R 4016 G 3851 B 4016
+ 
+Sensor 2: R 2126 G 1897 B 2126
+ 
+Sensor 3: R 2128 G 1898 B 2128
+ 
+Sensor 4: R 3675 G 3501 B 3675
+ 
+Sensor 5: R 3678 G 3504 B 3678
+ 
+Sensor 6: R 2474 G 2223 B 2474
+ 
+Sensor 7: R 2477 G 2225 B 2477
+ 
+Sensor 8: R 4025 G 3859 B 4025
+ 
+ 
+ 
+26.07.2018 14:45:22
+LED: N I: 5ms Periode: X
+Sensor 1: R 66 G 0 B 0
+ 
+Sensor 2: R 217 G 193 B 217
+ 
+Sensor 3: R 220 G 195 B 220
+ 
+Sensor 4: R 375 G 357 B 375
+ 
+Sensor 5: R 379 G 360 B 379
+ 
+Sensor 6: R 255 G 229 B 255
+ 
+Sensor 7: R 255 G 229 B 255
+ 
+Sensor 8: R 410 G 393 B 410
+ 
+ 
+ 
+26.07.2018 14:45:25
+LED: N I: 5ms Periode: X
+Sensor 1: R 408 G 390 B 408
+ 
+Sensor 2: R 218 G 193 B 218
+ 
+Sensor 3: R 218 G 193 B 218
+ 
+Sensor 4: R 379 G 360 B 379
+ 
+Sensor 5: R 379 G 360 B 379
+ 
+Sensor 6: R 253 G 226 B 253
+ 
+Sensor 7: R 255 G 229 B 255
+ 
+Sensor 8: R 415 G 397 B 415
+ 
+ 
+ 
+26.07.2018 14:45:26
+LED: N I: 5ms Periode: X
+Sensor 1: R 408 G 390 B 408
+ 
+Sensor 2: R 218 G 193 B 218
+ 
+Sensor 3: R 218 G 193 B 218
+ 
+Sensor 4: R 379 G 360 B 379
+ 
+Sensor 5: R 380 G 361 B 380
+ 
+Sensor 6: R 256 G 229 B 256
+ 
+Sensor 7: R 253 G 226 B 253
+ 
+Sensor 8: R 415 G 397 B 415
+ 
+ 
+ 
+26.07.2018 14:45:27
+LED: N I: 5ms Periode: X
+Sensor 1: R 408 G 390 B 408
+ 
+Sensor 2: R 218 G 193 B 218
+ 
+Sensor 3: R 218 G 193 B 218
+ 
+Sensor 4: R 379 G 360 B 379
+ 
+Sensor 5: R 379 G 360 B 379
+ 
+Sensor 6: R 255 G 229 B 255
+ 
+Sensor 7: R 253 G 226 B 253
+ 
+Sensor 8: R 415 G 397 B 415
+ 
+ 
+ 
+26.07.2018 14:45:28
+LED: N I: 5ms Periode: X
+Sensor 1: R 408 G 390 B 408
+ 
+Sensor 2: R 218 G 193 B 218
+ 
+Sensor 3: R 220 G 195 B 220
+ 
+Sensor 4: R 379 G 360 B 379
+ 
+Sensor 5: R 375 G 356 B 375
+ 
+Sensor 6: R 255 G 228 B 255
+ 
+Sensor 7: R 255 G 229 B 255
+ 
+Sensor 8: R 410 G 392 B 410
+ 
+ 
+ 
+26.07.2018 14:45:28
+LED: N I: 5ms Periode: X
+Sensor 1: R 408 G 390 B 408
+ 
+Sensor 2: R 218 G 193 B 218
+ 
+Sensor 3: R 220 G 195 B 220
+ 
+Sensor 4: R 375 G 356 B 375
+ 
+Sensor 5: R 379 G 360 B 379
+ 
+Sensor 6: R 255 G 229 B 255
+ 
+Sensor 7: R 255 G 229 B 255
+ 
+Sensor 8: R 410 G 393 B 410
+ 
+ 
+ 
+26.07.2018 14:45:29
+LED: N I: 5ms Periode: X
+Sensor 1: R 408 G 390 B 408
+ 
+Sensor 2: R 218 G 193 B 218
+ 
+Sensor 3: R 220 G 195 B 220
+ 
+Sensor 4: R 375 G 356 B 375
+ 
+Sensor 5: R 379 G 360 B 379
+ 
+Sensor 6: R 255 G 228 B 255
+ 
+Sensor 7: R 253 G 226 B 253
+ 
+Sensor 8: R 415 G 396 B 415
+ 
+ 
+ 
+26.07.2018 14:46:57
+LED: N I: 50ms Periode: X
+Sensor 1: R 66 G 0 B 0
+ 
+Sensor 2: R 1770 G 1643 B 1770
+ 
+Sensor 3: R 1770 G 1643 B 1770
+ 
+Sensor 4: R 3409 G 3291 B 3409
+ 
+Sensor 5: R 3410 G 3291 B 3410
+ 
+Sensor 6: R 2198 G 2015 B 2198
+ 
+Sensor 7: R 2197 G 2013 B 2197
+ 
+Sensor 8: R 3806 G 3687 B 3806
+ 
+ 
+ 
+26.07.2018 14:46:58
+LED: N I: 50ms Periode: X
+Sensor 1: R 3797 G 3678 B 3797
+ 
+Sensor 2: R 1788 G 1656 B 1788
+ 
+Sensor 3: R 1788 G 1655 B 1788
+ 
+Sensor 4: R 3420 G 3298 B 3420
+ 
+Sensor 5: R 3422 G 3299 B 3422
+ 
+Sensor 6: R 2213 G 2025 B 2213
+ 
+Sensor 7: R 2211 G 2023 B 2211
+ 
+Sensor 8: R 3817 G 3694 B 3817
+ 
+ 
+ 
+26.07.2018 14:47:19
+LED: N I: 50ms Periode: X
+Sensor 1: R 201 G 181 B 201
+ 
+Sensor 2: R 199 G 179 B 199
+ 
+Sensor 3: R 358 G 342 B 358
+ 
+Sensor 4: R 358 G 342 B 358
+ 
+Sensor 5: R 237 G 214 B 237
+ 
+Sensor 6: R 237 G 214 B 237
+ 
+Sensor 7: R 395 G 379 B 395
+ 
+Sensor 8: R 395 G 380 B 395
+ 
+ 
+ 
+26.07.2018 14:47:21
+LED: N I: 50ms Periode: X
+Sensor 1: R 206 G 184 B 206
+ 
+Sensor 2: R 206 G 184 B 206
+ 
+Sensor 3: R 362 G 345 B 362
+ 
+Sensor 4: R 364 G 346 B 364
+ 
+Sensor 5: R 242 G 217 B 242
+ 
+Sensor 6: R 243 G 218 B 243
+ 
+Sensor 7: R 398 G 382 B 398
+ 
+Sensor 8: R 399 G 383 B 399
+ 
+ 
+ 
+26.07.2018 14:47:21
+LED: N I: 50ms Periode: X
+Sensor 1: R 208 G 185 B 208
+ 
+Sensor 2: R 208 G 185 B 208
+ 
+Sensor 3: R 364 G 347 B 364
+ 
+Sensor 4: R 363 G 346 B 363
+ 
+Sensor 5: R 243 G 218 B 243
+ 
+Sensor 6: R 243 G 218 B 243
+ 
+Sensor 7: R 399 G 382 B 399
+ 
+Sensor 8: R 400 G 383 B 400
+ 
+ 
+ 
+26.07.2018 14:47:22
+LED: N I: 50ms Periode: X
+Sensor 1: R 210 G 187 B 210
+ 
+Sensor 2: R 208 G 185 B 208
+ 
+Sensor 3: R 364 G 346 B 364
+ 
+Sensor 4: R 365 G 347 B 365
+ 
+Sensor 5: R 244 G 218 B 244
+ 
+Sensor 6: R 244 G 218 B 244
+ 
+Sensor 7: R 400 G 383 B 400
+ 
+Sensor 8: R 399 G 382 B 399
+ 
+ 
+ 
+26.07.2018 14:48:00
+LED: N I: 5ms Periode: X
+Sensor 1: R 176 G 165 B 176
+ 
+Sensor 2: R 175 G 163 B 175
+ 
+Sensor 3: R 341 G 330 B 341
+ 
+Sensor 4: R 341 G 330 B 341
+ 
+Sensor 5: R 219 G 201 B 219
+ 
+Sensor 6: R 218 G 200 B 218
+ 
+Sensor 7: R 381 G 370 B 381
+ 
+Sensor 8: R 380 G 369 B 380
+ 
+ 
+ 
+26.07.2018 14:48:01
+LED: N I: 5ms Periode: X
+Sensor 1: R 175 G 163 B 175
+ 
+Sensor 2: R 174 G 163 B 174
+ 
+Sensor 3: R 340 G 329 B 340
+ 
+Sensor 4: R 340 G 329 B 340
+ 
+Sensor 5: R 219 G 201 B 219
+ 
+Sensor 6: R 218 G 201 B 218
+ 
+Sensor 7: R 380 G 369 B 380
+ 
+Sensor 8: R 381 G 370 B 381
+ 
+ 
+ 
+26.07.2018 14:48:01
+LED: N I: 5ms Periode: X
+Sensor 1: R 175 G 163 B 175
+ 
+Sensor 2: R 175 G 163 B 175
+ 
+Sensor 3: R 341 G 330 B 341
+ 
+Sensor 4: R 340 G 329 B 340
+ 
+Sensor 5: R 218 G 200 B 218
+ 
+Sensor 6: R 218 G 200 B 218
+ 
+Sensor 7: R 380 G 369 B 380
+ 
+Sensor 8: R 380 G 369 B 380
+ 
+ 
+ 
+26.07.2018 14:48:02
+LED: N I: 5ms Periode: X
+Sensor 1: R 175 G 163 B 175
+ 
+Sensor 2: R 175 G 163 B 175
+ 
+Sensor 3: R 341 G 330 B 341
+ 
+Sensor 4: R 340 G 329 B 340
+ 
+Sensor 5: R 218 G 200 B 218
+ 
+Sensor 6: R 218 G 200 B 218
+ 
+Sensor 7: R 381 G 369 B 381
+ 
+Sensor 8: R 381 G 369 B 381
+ 
+ 
+ 
+26.07.2018 14:48:30
+LED: N I: 50ms Periode: X
+Sensor 1: R 1728 G 1611 B 1728
+ 
+Sensor 2: R 1726 G 1610 B 1726
+ 
+Sensor 3: R 3368 G 3256 B 3368
+ 
+Sensor 4: R 3369 G 3256 B 3369
+ 
+Sensor 5: R 2158 G 1983 B 2158
+ 
+Sensor 6: R 2159 G 1983 B 2159
+ 
+Sensor 7: R 3767 G 3654 B 3767
+ 
+Sensor 8: R 3767 G 3654 B 3767
+ 
+ 
+ 
+26.07.2018 14:48:33
+LED: N I: 50ms Periode: X
+Sensor 1: R 1726 G 1610 B 1726
+ 
+Sensor 2: R 1725 G 1609 B 1725
+ 
+Sensor 3: R 3369 G 3257 B 3369
+ 
+Sensor 4: R 3367 G 3255 B 3367
+ 
+Sensor 5: R 2156 G 1981 B 2156
+ 
+Sensor 6: R 2157 G 1982 B 2157
+ 
+Sensor 7: R 3766 G 3653 B 3766
+ 
+Sensor 8: R 3766 G 3653 B 3766
+ 
+ 
+ 
+26.07.2018 14:49:25
+LED: N I: 50ms Periode: X
+Sensor 1: R 2586 G 2415 B 2586
+ 
+Sensor 2: R 2587 G 2416 B 2587
+ 
+Sensor 3: R 4095 G 4095 B 4095
+ 
+Sensor 4: R 4095 G 4095 B 4095
+ 
+Sensor 5: R 3238 G 2978 B 3238
+ 
+Sensor 6: R 3239 G 2979 B 3239
+ 
+Sensor 7: R 4095 G 4095 B 4095
+ 
+Sensor 8: R 4095 G 4095 B 4095
+ 
+ 
+ 
+26.07.2018 14:49:27
+LED: N I: 50ms Periode: X
+Sensor 1: R 2588 G 2416 B 2588
+ 
+Sensor 2: R 2585 G 2414 B 2585
+ 
+Sensor 3: R 4095 G 4095 B 4095
+ 
+Sensor 4: R 4095 G 4095 B 4095
+ 
+Sensor 5: R 3234 G 2974 B 3234
+ 
+Sensor 6: R 3234 G 2974 B 3234
+ 
+Sensor 7: R 4095 G 4095 B 4095
+ 
+Sensor 8: R 4095 G 4095 B 4095
+ 
+ 
+ 
+26.07.2018 14:49:31
+LED: N I: 50ms Periode: X
+Sensor 1: R 1724 G 1610 B 1724
+ 
+Sensor 2: R 1722 G 1608 B 1722
+ 
+Sensor 3: R 3365 G 3256 B 3365
+ 
+Sensor 4: R 3366 G 3257 B 3366
+ 
+Sensor 5: R 2156 G 1982 B 2156
+ 
+Sensor 6: R 2158 G 1985 B 2158
+ 
+Sensor 7: R 3771 G 3661 B 3771
+ 
+Sensor 8: R 3770 G 3660 B 3770
+ 
+ 
+ 
+26.07.2018 14:49:54
+LED: N I: 50ms Periode: X
+Sensor 1: R 262 G 245 B 262
+ 
+Sensor 2: R 262 G 244 B 262
+ 
+Sensor 3: R 513 G 496 B 513
+ 
+Sensor 4: R 511 G 494 B 511
+ 
+Sensor 5: R 327 G 301 B 327
+ 
+Sensor 6: R 327 G 301 B 327
+ 
+Sensor 7: R 572 G 555 B 572
+ 
+Sensor 8: R 572 G 555 B 572
+ 
+ 
+ 
+26.07.2018 14:49:56
+LED: N I: 50ms Periode: X
+Sensor 1: R 262 G 244 B 262
+ 
+Sensor 2: R 262 G 245 B 262
+ 
+Sensor 3: R 511 G 494 B 511
+ 
+Sensor 4: R 511 G 494 B 511
+ 
+Sensor 5: R 327 G 301 B 327
+ 
+Sensor 6: R 327 G 301 B 327
+ 
+Sensor 7: R 572 G 555 B 572
+ 
+Sensor 8: R 572 G 555 B 572
+ 
+ 
+ 
+26.07.2018 14:49:57
+LED: N I: 50ms Periode: X
+Sensor 1: R 174 G 162 B 174
+ 
+Sensor 2: R 174 G 162 B 174
+ 
+Sensor 3: R 339 G 328 B 339
+ 
+Sensor 4: R 339 G 328 B 339
+ 
+Sensor 5: R 218 G 201 B 218
+ 
+Sensor 6: R 218 G 200 B 218
+ 
+Sensor 7: R 381 G 370 B 381
+ 
+Sensor 8: R 380 G 369 B 380
+ 
+ 
+ 
+26.07.2018 14:49:58
+LED: N I: 50ms Periode: X
+Sensor 1: R 175 G 163 B 175
+ 
+Sensor 2: R 174 G 163 B 174
+ 
+Sensor 3: R 341 G 330 B 341
+ 
+Sensor 4: R 341 G 330 B 341
+ 
+Sensor 5: R 218 G 200 B 218
+ 
+Sensor 6: R 218 G 200 B 218
+ 
+Sensor 7: R 380 G 369 B 380
+ 
+Sensor 8: R 380 G 369 B 380
+ 
+ 
+ 
+26.07.2018 14:49:58
+LED: N I: 50ms Periode: X
+Sensor 1: R 174 G 163 B 174
+ 
+Sensor 2: R 175 G 163 B 175
+ 
+Sensor 3: R 340 G 329 B 340
+ 
+Sensor 4: R 340 G 329 B 340
+ 
+Sensor 5: R 218 G 200 B 218
+ 
+Sensor 6: R 218 G 200 B 218
+ 
+Sensor 7: R 380 G 369 B 380
+ 
+Sensor 8: R 381 G 370 B 381
+ 
+ 
+ 
+26.07.2018 14:50:03
+LED: N I: 5ms Periode: X
+Sensor 1: R 262 G 245 B 262
+ 
+Sensor 2: R 262 G 245 B 262
+ 
+Sensor 3: R 511 G 494 B 511
+ 
+Sensor 4: R 511 G 494 B 511
+ 
+Sensor 5: R 327 G 301 B 327
+ 
+Sensor 6: R 327 G 301 B 327
+ 
+Sensor 7: R 572 G 554 B 572
+ 
+Sensor 8: R 572 G 555 B 572
+ 
+ 
+ 
+26.07.2018 14:50:04
+LED: N I: 5ms Periode: X
+Sensor 1: R 262 G 245 B 262
+ 
+Sensor 2: R 262 G 245 B 262
+ 
+Sensor 3: R 511 G 494 B 511
+ 
+Sensor 4: R 511 G 494 B 511
+ 
+Sensor 5: R 328 G 301 B 328
+ 
+Sensor 6: R 328 G 301 B 328
+ 
+Sensor 7: R 575 G 558 B 575
+ 
+Sensor 8: R 572 G 555 B 572
+ 
+ 
+ 
+26.07.2018 14:50:04
+LED: N I: 5ms Periode: X
+Sensor 1: R 263 G 245 B 263
+ 
+Sensor 2: R 263 G 245 B 263
+ 
+Sensor 3: R 511 G 494 B 511
+ 
+Sensor 4: R 511 G 494 B 511
+ 
+Sensor 5: R 328 G 301 B 328
+ 
+Sensor 6: R 328 G 301 B 328
+ 
+Sensor 7: R 572 G 555 B 572
+ 
+Sensor 8: R 572 G 555 B 572
+ 
+ 
+ 
+26.07.2018 14:50:05
+LED: N I: 5ms Periode: X
+Sensor 1: R 265 G 247 B 265
+ 
+Sensor 2: R 263 G 245 B 263
+ 
+Sensor 3: R 512 G 495 B 512
+ 
+Sensor 4: R 511 G 494 B 511
+ 
+Sensor 5: R 328 G 301 B 328
+ 
+Sensor 6: R 328 G 301 B 328
+ 
+Sensor 7: R 572 G 555 B 572
+ 
+Sensor 8: R 572 G 555 B 572
+ 
+ 
+ 
+26.07.2018 14:50:11
+LED: N I: 50ms Periode: X
+Sensor 1: R 1766 G 1639 B 1766
+ 
+Sensor 2: R 1766 G 1639 B 1766
+ 
+Sensor 3: R 3395 G 3276 B 3395
+ 
+Sensor 4: R 3396 G 3277 B 3396
+ 
+Sensor 5: R 2187 G 2004 B 2187
+ 
+Sensor 6: R 2190 G 2006 B 2190
+ 
+Sensor 7: R 3790 G 3671 B 3790
+ 
+Sensor 8: R 3789 G 3670 B 3789
+ 
+ 
+ 
+26.07.2018 14:50:13
+LED: N I: 50ms Periode: X
+Sensor 1: R 1773 G 1644 B 1773
+ 
+Sensor 2: R 1773 G 1643 B 1773
+ 
+Sensor 3: R 4081 G 3936 B 4081
+ 
+Sensor 4: R 4095 G 4095 B 4095
+ 
+Sensor 5: R 3293 G 3015 B 3293
+ 
+Sensor 6: R 3294 G 3016 B 3294
+ 
+Sensor 7: R 4095 G 4095 B 4095
+ 
+Sensor 8: R 4095 G 4095 B 4095
+ 
+ 
+ 
+26.07.2018 14:50:14
+LED: N I: 50ms Periode: X
+Sensor 1: R 2667 G 2471 B 2667
+ 
+Sensor 2: R 2666 G 2469 B 2666
+ 
+Sensor 3: R 4095 G 4095 B 4095
+ 
+Sensor 4: R 4095 G 4095 B 4095
+ 
+Sensor 5: R 3295 G 3017 B 3295
+ 
+Sensor 6: R 3295 G 3016 B 3295
+ 
+Sensor 7: R 4095 G 4095 B 4095
+ 
+Sensor 8: R 4095 G 4095 B 4095
+ 
+ 
+ 
+26.07.2018 14:50:22
+LED: N I: 5ms Periode: X
+Sensor 1: R 265 G 247 B 265
+ 
+Sensor 2: R 265 G 246 B 265
+ 
+Sensor 3: R 512 G 495 B 512
+ 
+Sensor 4: R 512 G 495 B 512
+ 
+Sensor 5: R 329 G 302 B 329
+ 
+Sensor 6: R 329 G 302 B 329
+ 
+Sensor 7: R 573 G 555 B 573
+ 
+Sensor 8: R 573 G 555 B 573
+ 
+ 
+ 
+26.07.2018 14:50:23
+LED: N I: 5ms Periode: X
+Sensor 1: R 176 G 164 B 176
+ 
+Sensor 2: R 176 G 164 B 176
+ 
+Sensor 3: R 341 G 329 B 341
+ 
+Sensor 4: R 341 G 329 B 341
+ 
+Sensor 5: R 219 G 201 B 219
+ 
+Sensor 6: R 219 G 201 B 219
+ 
+Sensor 7: R 381 G 369 B 381
+ 
+Sensor 8: R 381 G 369 B 381
+ 
+ 
+ 
+26.07.2018 14:50:24
+LED: N I: 5ms Periode: X
+Sensor 1: R 176 G 164 B 176
+ 
+Sensor 2: R 176 G 164 B 176
+ 
+Sensor 3: R 341 G 330 B 341
+ 
+Sensor 4: R 340 G 329 B 340
+ 
+Sensor 5: R 219 G 201 B 219
+ 
+Sensor 6: R 219 G 201 B 219
+ 
+Sensor 7: R 382 G 370 B 382
+ 
+Sensor 8: R 382 G 370 B 382
+ 
+ 
+ 
+26.07.2018 14:50:24
+LED: N I: 5ms Periode: X
+Sensor 1: R 178 G 166 B 178
+ 
+Sensor 2: R 175 G 163 B 175
+ 
+Sensor 3: R 340 G 329 B 340
+ 
+Sensor 4: R 341 G 330 B 341
+ 
+Sensor 5: R 219 G 201 B 219
+ 
+Sensor 6: R 218 G 201 B 218
+ 
+Sensor 7: R 382 G 370 B 382
+ 
+Sensor 8: R 382 G 370 B 382
+ 
+ 
+ 
+26.07.2018 14:50:25
+LED: N I: 5ms Periode: X
+Sensor 1: R 175 G 163 B 175
+ 
+Sensor 2: R 175 G 163 B 175
+ 
+Sensor 3: R 340 G 329 B 340
+ 
+Sensor 4: R 341 G 330 B 341
+ 
+Sensor 5: R 218 G 201 B 218
+ 
+Sensor 6: R 219 G 201 B 219
+ 
+Sensor 7: R 381 G 369 B 381
+ 
+Sensor 8: R 382 G 370 B 382
+ 
+ 
+ 
+26.07.2018 14:50:26
+LED: N I: 5ms Periode: X
+Sensor 1: R 255 G 237 B 255
+ 
+Sensor 2: R 264 G 246 B 264
+ 
+Sensor 3: R 512 G 495 B 512
+ 
+Sensor 4: R 512 G 495 B 512
+ 
+Sensor 5: R 329 G 302 B 329
+ 
+Sensor 6: R 329 G 302 B 329
+ 
+Sensor 7: R 573 G 556 B 573
+ 
+Sensor 8: R 572 G 555 B 572
+ 
+ 
+ 
+26.07.2018 14:50:29
+LED: N I: 5ms Periode: X
+Sensor 1: R 262 G 245 B 262
+ 
+Sensor 2: R 263 G 245 B 263
+ 
+Sensor 3: R 512 G 494 B 512
+ 
+Sensor 4: R 511 G 494 B 511
+ 
+Sensor 5: R 328 G 301 B 328
+ 
+Sensor 6: R 328 G 301 B 328
+ 
+Sensor 7: R 573 G 556 B 573
+ 
+Sensor 8: R 572 G 554 B 572
+ 
+ 
+ 
+26.07.2018 14:50:29
+LED: N I: 5ms Periode: X
+Sensor 1: R 263 G 245 B 263
+ 
+Sensor 2: R 263 G 245 B 263
+ 
+Sensor 3: R 511 G 494 B 511
+ 
+Sensor 4: R 511 G 494 B 511
+ 
+Sensor 5: R 277 G 254 B 277
+ 
+Sensor 6: R 218 G 200 B 218
+ 
+Sensor 7: R 380 G 369 B 380
+ 
+Sensor 8: R 380 G 369 B 380
+ 
+ 
+ 
+26.07.2018 14:50:30
+LED: N I: 5ms Periode: X
+Sensor 1: R 176 G 164 B 176
+ 
+Sensor 2: R 176 G 164 B 176
+ 
+Sensor 3: R 340 G 329 B 340
+ 
+Sensor 4: R 341 G 330 B 341
+ 
+Sensor 5: R 219 G 201 B 219
+ 
+Sensor 6: R 218 G 200 B 218
+ 
+Sensor 7: R 382 G 370 B 382
+ 
+Sensor 8: R 380 G 369 B 380
+ 
+ 
+ 
+26.07.2018 14:50:30
+LED: N I: 5ms Periode: X
+Sensor 1: R 177 G 165 B 177
+ 
+Sensor 2: R 175 G 163 B 175
+ 
+Sensor 3: R 381 G 368 B 381
+ 
+Sensor 4: R 511 G 494 B 511
+ 
+Sensor 5: R 328 G 301 B 328
+ 
+Sensor 6: R 328 G 301 B 328
+ 
+Sensor 7: R 572 G 554 B 572
+ 
+Sensor 8: R 572 G 554 B 572
+ 
+ 
+ 
+26.07.2018 14:50:31
+LED: N I: 5ms Periode: X
+Sensor 1: R 265 G 247 B 265
+ 
+Sensor 2: R 263 G 246 B 263
+ 
+Sensor 3: R 511 G 494 B 511
+ 
+Sensor 4: R 512 G 495 B 512
+ 
+Sensor 5: R 328 G 301 B 328
+ 
+Sensor 6: R 329 G 302 B 329
+ 
+Sensor 7: R 573 G 555 B 573
+ 
+Sensor 8: R 572 G 555 B 572
+ 
+ 
+ 
+26.07.2018 14:50:32
+LED: N I: 5ms Periode: X
+Sensor 1: R 264 G 246 B 264
+ 
+Sensor 2: R 265 G 247 B 265
+ 
+Sensor 3: R 512 G 495 B 512
+ 
+Sensor 4: R 512 G 495 B 512
+ 
+Sensor 5: R 328 G 302 B 328
+ 
+Sensor 6: R 328 G 302 B 328
+ 
+Sensor 7: R 572 G 555 B 572
+ 
+Sensor 8: R 572 G 555 B 572
+ 
+ 
+ 
+26.07.2018 14:50:33
+LED: N I: 5ms Periode: X
+Sensor 1: R 263 G 245 B 263
+ 
+Sensor 2: R 263 G 246 B 263
+ 
+Sensor 3: R 512 G 495 B 512
+ 
+Sensor 4: R 511 G 494 B 511
+ 
+Sensor 5: R 328 G 301 B 328
+ 
+Sensor 6: R 328 G 301 B 328
+ 
+Sensor 7: R 572 G 555 B 572
+ 
+Sensor 8: R 572 G 554 B 572
+ 
+ 
+ 
+26.07.2018 14:50:35
+LED: N I: 5ms Periode: X
+Sensor 1: R 175 G 164 B 175
+ 
+Sensor 2: R 175 G 164 B 175
+ 
+Sensor 3: R 341 G 329 B 341
+ 
+Sensor 4: R 340 G 328 B 340
+ 
+Sensor 5: R 219 G 201 B 219
+ 
+Sensor 6: R 218 G 200 B 218
+ 
+Sensor 7: R 380 G 369 B 380
+ 
+Sensor 8: R 381 G 370 B 381
+ 
+ 
+ 
+26.07.2018 14:50:41
+LED: N I: 1ms Periode: X
+Sensor 1: R 54 G 51 B 54
+ 
+Sensor 2: R 54 G 51 B 54
+ 
+Sensor 3: R 107 G 104 B 10
+ 
+Sensor 4: R 107 G 103 B 10
+ 
+Sensor 5: R 67 G 62 B 67
+ 
+Sensor 6: R 68 G 63 B 68
+ 
+Sensor 7: R 119 G 116 B 11
+ 
+Sensor 8: R 117 G 114 B 11
+ 
+ 
+ 
+26.07.2018 14:50:42
+LED: N I: 1ms Periode: X
+Sensor 1: R 54 G 50 B 54
+ 
+Sensor 2: R 55 G 51 B 55
+ 
+Sensor 3: R 105 G 101 B 10
+ 
+Sensor 4: R 107 G 103 B 10
+ 
+Sensor 5: R 68 G 63 B 68
+ 
+Sensor 6: R 68 G 63 B 68
+ 
+Sensor 7: R 119 G 116 B 11
+ 
+Sensor 8: R 119 G 116 B 11
+ 
+ 
+ 
+26.07.2018 14:50:42
+LED: N I: 1ms Periode: X
+Sensor 1: R 55 G 51 B 55
+ 
+Sensor 2: R 55 G 51 B 55
+ 
+Sensor 3: R 107 G 103 B 10
+ 
+Sensor 4: R 107 G 103 B 10
+ 
+Sensor 5: R 68 G 63 B 68
+ 
+Sensor 6: R 68 G 63 B 68
+ 
+Sensor 7: R 119 G 115 B 11
+ 
+Sensor 8: R 118 G 114 B 11
+ 
+ 
+ 
+26.07.2018 14:50:43
+LED: N I: 1ms Periode: X
+Sensor 1: R 55 G 51 B 55
+ 
+Sensor 2: R 55 G 51 B 55
+ 
+Sensor 3: R 107 G 103 B 10
+ 
+Sensor 4: R 105 G 102 B 10
+ 
+Sensor 5: R 67 G 62 B 67
+ 
+Sensor 6: R 68 G 63 B 68
+ 
+Sensor 7: R 118 G 115 B 11
+ 
+Sensor 8: R 118 G 114 B 11
+ 
+ 
+ 
+26.07.2018 14:50:43
+LED: N I: 1ms Periode: X
+Sensor 1: R 55 G 51 B 55
+ 
+Sensor 2: R 55 G 51 B 55
+ 
+Sensor 3: R 105 G 101 B 10
+ 
+Sensor 4: R 107 G 103 B 10
+ 
+Sensor 5: R 68 G 63 B 68
+ 
+Sensor 6: R 68 G 63 B 68
+ 
+Sensor 7: R 119 G 115 B 11
+ 
+Sensor 8: R 117 G 114 B 11
+ 
+ 
+ 
+26.07.2018 14:50:44
+LED: N I: 1ms Periode: X
+Sensor 1: R 55 G 51 B 55
+ 
+Sensor 2: R 55 G 51 B 55
+ 
+Sensor 3: R 107 G 103 B 10
+ 
+Sensor 4: R 106 G 103 B 10
+ 
+Sensor 5: R 67 G 62 B 67
+ 
+Sensor 6: R 68 G 63 B 68
+ 
+Sensor 7: R 119 G 116 B 11
+ 
+Sensor 8: R 119 G 116 B 11
+ 
+ 
+ 
+26.07.2018 16:48:34
+LED: N I: 50ms Periode: X
+Sensor 1: R 2923 G 2692 B 2923
+ 
+Sensor 2: R 2930 G 2699 B 2930
+ 
+Sensor 3: R 4095 G 4013 B 4095
+ 
+Sensor 4: R 4095 G 4018 B 4095
+ 
+Sensor 5: R 3117 G 2851 B 3117
+ 
+Sensor 6: R 3116 G 2850 B 3116
+ 
+Sensor 7: R 4095 G 4095 B 4095
+ 
+Sensor 8: R 4095 G 4095 B 4095
+ 
+ 
+ 

@@ -1,0 +1,119 @@
+C:\Users\Fabian Brey\Desktop\Falk\GrenzschichtGUI\GrenzschichtGUI\bin\Debug\GrenzschichtGUI.exe.config
+C:\Users\Fabian Brey\Desktop\Falk\GrenzschichtGUI\GrenzschichtGUI\bin\Debug\GrenzschichtGUI.exe
+C:\Users\Fabian Brey\Desktop\Falk\GrenzschichtGUI\GrenzschichtGUI\bin\Debug\GrenzschichtGUI.pdb
+C:\Users\Fabian Brey\Desktop\Falk\GrenzschichtGUI\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.csprojAssemblyReference.cache
+C:\Users\Fabian Brey\Desktop\Falk\GrenzschichtGUI\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.Properties.Resources.resources
+C:\Users\Fabian Brey\Desktop\Falk\GrenzschichtGUI\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.csproj.GenerateResource.cache
+C:\Users\Fabian Brey\Desktop\Falk\GrenzschichtGUI\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.csproj.CoreCompileInputs.cache
+C:\Users\Fabian Brey\Desktop\Falk\GrenzschichtGUI\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.exe
+C:\Users\Fabian Brey\Desktop\Falk\GrenzschichtGUI\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.pdb
+C:\Users\Fabian Brey\Desktop\Falk\GrenzschichtGUI\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.txtConnect.resources
+\\STWSERVER\Projekte\Grenzschichtsensor_10113\4_Projektdateien\403_Software\Praktikant_Falk\GUI_VisualStudio\GrenzschichtGUI\GrenzschichtGUI\bin\Debug\GrenzschichtGUI.exe.config
+\\STWSERVER\Projekte\Grenzschichtsensor_10113\4_Projektdateien\403_Software\Praktikant_Falk\GUI_VisualStudio\GrenzschichtGUI\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.exe
+\\STWSERVER\Projekte\Grenzschichtsensor_10113\4_Projektdateien\403_Software\Praktikant_Falk\GUI_VisualStudio\GrenzschichtGUI\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.pdb
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI\GrenzschichtGUI\bin\Debug\GrenzschichtGUI.exe.config
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI\GrenzschichtGUI\bin\Debug\GrenzschichtGUI.exe
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.txtConnect.resources
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.Properties.Resources.resources
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.csproj.GenerateResource.cache
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.csproj.CoreCompileInputs.cache
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.exe
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.pdb
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.csprojAssemblyReference.cache
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI - Kopie\GrenzschichtGUI\bin\Debug\GrenzschichtGUI.exe.config
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI - Kopie\GrenzschichtGUI\bin\Debug\GrenzschichtGUI.exe
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI - Kopie\GrenzschichtGUI\bin\Debug\GrenzschichtGUI.pdb
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI - Kopie\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.txtConnect.resources
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI - Kopie\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.Properties.Resources.resources
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI - Kopie\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.csproj.GenerateResource.cache
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI - Kopie\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.csproj.CoreCompileInputs.cache
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI - Kopie\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.exe
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI - Kopie\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.pdb
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI - Kopie\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.csprojAssemblyReference.cache
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI - Kopie - Kopie\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.txtConnect.resources
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI - Kopie - Kopie\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.Properties.Resources.resources
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI - Kopie - Kopie\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.csproj.GenerateResource.cache
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI - Kopie - Kopie\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.csproj.CoreCompileInputs.cache
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI - Kopie - Kopie\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.exe
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI - Kopie - Kopie\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.pdb
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI - Kopie - Kopie\GrenzschichtGUI\bin\Debug\GrenzschichtGUI.exe.config
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI - Kopie - Kopie\GrenzschichtGUI\bin\Debug\GrenzschichtGUI.exe
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI - Kopie - Kopie\GrenzschichtGUI\bin\Debug\GrenzschichtGUI.pdb
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI - serialPortPlusTimer\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.txtConnect.resources
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI - serialPortPlusTimer\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.Properties.Resources.resources
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI - serialPortPlusTimer\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.csproj.GenerateResource.cache
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI - serialPortPlusTimer\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.csproj.CoreCompileInputs.cache
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI - serialPortPlusTimer\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.exe
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI - serialPortPlusTimer\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.pdb
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI - serialPortPlusTimer\GrenzschichtGUI\bin\Debug\GrenzschichtGUI.exe.config
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI - serialPortPlusTimer\GrenzschichtGUI\bin\Debug\GrenzschichtGUI.exe
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI - serialPortPlusTimer\GrenzschichtGUI\bin\Debug\GrenzschichtGUI.pdb
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI - serialPortPlusTimer - Kopie\GrenzschichtGUI\bin\Debug\GrenzschichtGUI.exe.config
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI - serialPortPlusTimer - Kopie\GrenzschichtGUI\bin\Debug\GrenzschichtGUI.exe
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI - serialPortPlusTimer - Kopie\GrenzschichtGUI\bin\Debug\GrenzschichtGUI.pdb
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI - serialPortPlusTimer - Kopie\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.txtConnect.resources
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI - serialPortPlusTimer - Kopie\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.Properties.Resources.resources
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI - serialPortPlusTimer - Kopie\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.csproj.GenerateResource.cache
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI - serialPortPlusTimer - Kopie\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.csproj.CoreCompileInputs.cache
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI - serialPortPlusTimer - Kopie\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.exe
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI - serialPortPlusTimer - Kopie\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.pdb
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI - serialPortPlusTimer - Kopie\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.csprojAssemblyReference.cache
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI_Charts\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.txtConnect.resources
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI_Charts\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.Properties.Resources.resources
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI_Charts\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.csproj.GenerateResource.cache
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI_Charts\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.csproj.CoreCompileInputs.cache
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI_Charts\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.exe
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI_Charts\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.pdb
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI_Charts\GrenzschichtGUI\bin\Debug\GrenzschichtGUI.exe.config
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI_Charts\GrenzschichtGUI\bin\Debug\GrenzschichtGUI.exe
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI_Charts\GrenzschichtGUI\bin\Debug\GrenzschichtGUI.pdb
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI_Charts\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.csprojAssemblyReference.cache
+C:\Users\Eyleen\GrenzschichtGUI_20190430\GrenzschichtGUI\bin\Debug\GrenzschichtGUI.exe.config
+C:\Users\Eyleen\GrenzschichtGUI_20190430\GrenzschichtGUI\bin\Debug\GrenzschichtGUI.exe
+C:\Users\Eyleen\GrenzschichtGUI_20190430\GrenzschichtGUI\bin\Debug\GrenzschichtGUI.pdb
+C:\Users\Eyleen\GrenzschichtGUI_20190430\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.txtConnect.resources
+C:\Users\Eyleen\GrenzschichtGUI_20190430\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.Properties.Resources.resources
+C:\Users\Eyleen\GrenzschichtGUI_20190430\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.csproj.GenerateResource.cache
+C:\Users\Eyleen\GrenzschichtGUI_20190430\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.csproj.CoreCompileInputs.cache
+C:\Users\Eyleen\GrenzschichtGUI_20190430\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.exe
+C:\Users\Eyleen\GrenzschichtGUI_20190430\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.pdb
+C:\Users\Eyleen\GrenzschichtGUI_20190430\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.csprojAssemblyReference.cache
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI_20190430\GrenzschichtGUI\bin\Debug\GrenzschichtGUI.exe.config
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI_20190430\GrenzschichtGUI\bin\Debug\GrenzschichtGUI.exe
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI_20190430\GrenzschichtGUI\bin\Debug\GrenzschichtGUI.pdb
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI_20190430\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.csprojAssemblyReference.cache
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI_20190430\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.txtConnect.resources
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI_20190430\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.Properties.Resources.resources
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI_20190430\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.csproj.GenerateResource.cache
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI_20190430\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.csproj.CoreCompileInputs.cache
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI_20190430\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.exe
+D:\Projecte\Grenzschicht\GUI\GUI_VisualStudio\GrenzschichtGUI_20190430\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.pdb
+C:\Users\Eyleen\GrenzschichtGUI_20190501\GrenzschichtGUI\bin\Debug\GrenzschichtGUI.exe.config
+C:\Users\Eyleen\GrenzschichtGUI_20190501\GrenzschichtGUI\bin\Debug\GrenzschichtGUI.exe
+C:\Users\Eyleen\GrenzschichtGUI_20190501\GrenzschichtGUI\bin\Debug\GrenzschichtGUI.pdb
+C:\Users\Eyleen\GrenzschichtGUI_20190501\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.txtConnect.resources
+C:\Users\Eyleen\GrenzschichtGUI_20190501\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.Properties.Resources.resources
+C:\Users\Eyleen\GrenzschichtGUI_20190501\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.csproj.GenerateResource.cache
+C:\Users\Eyleen\GrenzschichtGUI_20190501\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.csproj.CoreCompileInputs.cache
+C:\Users\Eyleen\GrenzschichtGUI_20190501\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.exe
+C:\Users\Eyleen\GrenzschichtGUI_20190501\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.pdb
+C:\Users\Eyleen\GrenzschichtGUI_20190502\GrenzschichtGUI\bin\Debug\GrenzschichtGUI.exe.config
+C:\Users\Eyleen\GrenzschichtGUI_20190502\GrenzschichtGUI\bin\Debug\GrenzschichtGUI.exe
+C:\Users\Eyleen\GrenzschichtGUI_20190502\GrenzschichtGUI\bin\Debug\GrenzschichtGUI.pdb
+C:\Users\Eyleen\GrenzschichtGUI_20190502\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.txtConnect.resources
+C:\Users\Eyleen\GrenzschichtGUI_20190502\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.Properties.Resources.resources
+C:\Users\Eyleen\GrenzschichtGUI_20190502\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.csproj.GenerateResource.cache
+C:\Users\Eyleen\GrenzschichtGUI_20190502\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.csproj.CoreCompileInputs.cache
+C:\Users\Eyleen\GrenzschichtGUI_20190502\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.exe
+C:\Users\Eyleen\GrenzschichtGUI_20190502\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.pdb
+C:\Users\Eyleen\GrenzschichtGUI_20190502\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.csprojAssemblyReference.cache
+C:\Users\Sucheta\GärProzessSensor\GrenzschichtGUI_Server\GrenzschichtGUI_20190503\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.csprojAssemblyReference.cache
+C:\Users\Sucheta\GärProzessSensor\GrenzschichtGUI_Server\GrenzschichtGUI_20190503\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.txtConnect.resources
+C:\Users\Sucheta\GärProzessSensor\GrenzschichtGUI_Server\GrenzschichtGUI_20190503\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.Properties.Resources.resources
+C:\Users\Sucheta\GärProzessSensor\GrenzschichtGUI_Server\GrenzschichtGUI_20190503\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.csproj.GenerateResource.cache
+C:\Users\Sucheta\GärProzessSensor\GrenzschichtGUI_Server\GrenzschichtGUI_20190503\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.csproj.CoreCompileInputs.cache
+C:\Users\Sucheta\GärProzessSensor\GrenzschichtGUI_Server\GrenzschichtGUI_20190503\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.exe
+C:\Users\Sucheta\GärProzessSensor\GrenzschichtGUI_Server\GrenzschichtGUI_20190503\GrenzschichtGUI\obj\Debug\GrenzschichtGUI.pdb
+C:\Users\Sucheta\GärProzessSensor\GrenzschichtGUI_Server\GrenzschichtGUI_20190503\GrenzschichtGUI\bin\Debug\GrenzschichtGUI.exe.config
+C:\Users\Sucheta\GärProzessSensor\GrenzschichtGUI_Server\GrenzschichtGUI_20190503\GrenzschichtGUI\bin\Debug\GrenzschichtGUI.exe
+C:\Users\Sucheta\GärProzessSensor\GrenzschichtGUI_Server\GrenzschichtGUI_20190503\GrenzschichtGUI\bin\Debug\GrenzschichtGUI.pdb

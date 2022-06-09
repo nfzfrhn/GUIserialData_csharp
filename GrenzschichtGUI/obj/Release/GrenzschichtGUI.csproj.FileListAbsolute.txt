@@ -1,0 +1,10 @@
+C:\Users\Sucheta\GärProzessSensor\GrenzschichtGUI_Server\GrenzschichtGUI_20190503\GrenzschichtGUI\bin\Release\GrenzschichtGUI.exe.config
+C:\Users\Sucheta\GärProzessSensor\GrenzschichtGUI_Server\GrenzschichtGUI_20190503\GrenzschichtGUI\bin\Release\GrenzschichtGUI.exe
+C:\Users\Sucheta\GärProzessSensor\GrenzschichtGUI_Server\GrenzschichtGUI_20190503\GrenzschichtGUI\bin\Release\GrenzschichtGUI.pdb
+C:\Users\Sucheta\GärProzessSensor\GrenzschichtGUI_Server\GrenzschichtGUI_20190503\GrenzschichtGUI\obj\Release\GrenzschichtGUI.csprojAssemblyReference.cache
+C:\Users\Sucheta\GärProzessSensor\GrenzschichtGUI_Server\GrenzschichtGUI_20190503\GrenzschichtGUI\obj\Release\GrenzschichtGUI.txtConnect.resources
+C:\Users\Sucheta\GärProzessSensor\GrenzschichtGUI_Server\GrenzschichtGUI_20190503\GrenzschichtGUI\obj\Release\GrenzschichtGUI.Properties.Resources.resources
+C:\Users\Sucheta\GärProzessSensor\GrenzschichtGUI_Server\GrenzschichtGUI_20190503\GrenzschichtGUI\obj\Release\GrenzschichtGUI.csproj.GenerateResource.cache
+C:\Users\Sucheta\GärProzessSensor\GrenzschichtGUI_Server\GrenzschichtGUI_20190503\GrenzschichtGUI\obj\Release\GrenzschichtGUI.csproj.CoreCompileInputs.cache
+C:\Users\Sucheta\GärProzessSensor\GrenzschichtGUI_Server\GrenzschichtGUI_20190503\GrenzschichtGUI\obj\Release\GrenzschichtGUI.exe
+C:\Users\Sucheta\GärProzessSensor\GrenzschichtGUI_Server\GrenzschichtGUI_20190503\GrenzschichtGUI\obj\Release\GrenzschichtGUI.pdb

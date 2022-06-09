@@ -1,0 +1,1085 @@
+﻿using System;
+using System.Drawing;
+using System.Linq;
+using System.Windows.Forms;
+using System.IO;
+using System.Windows.Media;
+
+namespace GrenzschichtGUI
+{    
+    public partial class txtConnect : Form
+    {
+        public enum CmdId
+        {
+            NONE,
+            CNN,
+            DCNN,
+            INTEG,
+            SENSVAL1,
+            SENSVAL2,
+            SENSVAL3,
+            SENSVAL4,
+            SENSVAL5,
+            SENSVAL6,
+            SENSVAL7,
+            SENSVAL8,
+            LEDAN,
+            LEDAUS
+        }
+
+
+        // Private memebers
+        string mFilePath = string.Empty;                    // Download file path
+        int mFileIndex;
+        CmdId mCmd = CmdId.NONE;
+        int count = -1;
+        int refVal = 0;
+        private ClassCommunication comm;
+        
+        bool test = false;
+
+        public txtConnect()
+        {
+            InitializeComponent();
+            comm = new ClassCommunication();
+            comm.rspReceivedEventHandler += new ClassCommunication.ResponseReceivedEventHandler(RspReceivedHandler);
+            this.buttonClearGraph.Visible = false;
+        }
+
+        // Callback for Handling evnts from class Communication
+        private void RspReceivedHandler(string TS, string X, string Y, string Z)
+        {
+            processPdu(TS, X, Y, Z);
+        }
+
+        private void txtConnect_FormClosing(object sender, EventArgs e)
+        {
+            if (labConnection.Text.Equals("Connected"))
+            {
+                comm.SendDisconnectRequest();
+                comm.ClosePort();
+            }
+        }
+                
+        private int IntPow(int b, int exp)
+        {
+            int result = 1;
+            for (; ; )
+            {
+                if ((exp & 1) == 1)
+                {
+                    result *= b;
+                }
+                exp >>= 1;
+                if (exp == 0)
+                {
+                    break;
+                }
+                b *= b;
+            }
+            return result;
+        }
+              
+        /********************** Serial Port Functions *******************************************/
+        private void butConnect_Click(object sender, EventArgs e)
+        {          
+            string portName = Port_comboBox.Text;
+            int baudRate = 115200;
+            int dataBits = 8;
+
+            if ((labConnection.Text.Equals("Disconnected")) && (portName.Any()))
+            { 
+                comm.OpenPort(portName, baudRate, dataBits);
+                mCmd = CmdId.CNN;
+                comm.SendConnectReq();
+            }
+            else if(labConnection.Text.Equals("Connected"))
+            {
+                HandleDisconnect();
+            }          
+        }
+
+        private void HandleDisconnect()
+        {
+            labSens1R.Text = "";
+            labSens1G.Text = "";
+            labSens1B.Text = "";
+            comboBoxIntTime.Text = "10";
+            timerPeriode.Enabled = false;
+            checkBoxPeriodisch.Checked = false;
+            checkBoxPeriodisch.Text = "Start Scan";
+
+            mCmd = CmdId.DCNN;
+            //clearTntensityTimeGraph();
+            comm.SendIntegrationTimeChangeRequest(comboBoxIntTime.Text);
+            comm.SendDisconnectRequest();
+        }
+
+        private void clearButtonColors()
+        {
+            Invoke(new Action(() => butSens1.BackColor = System.Drawing.SystemColors.ActiveCaption));
+            
+        }        
+        private void PortCombobox_Click(object sender, EventArgs e)
+        {
+            Port_comboBox.DataSource = comm.GetPortNames();
+        }
+               
+        private void processSuccessfulRspPdu()
+        {
+            switch(mCmd)
+            {
+                case CmdId.CNN:                                         // Wartet auf "r" = "72"
+                    {
+                        Invoke(new Action(() => labConnection.Text = "Connected"));
+                        Invoke(new Action(() => buttonConnect.Text = "Disconnect"));
+                        picStatusConnect.BackColor = System.Drawing.Color.Green;
+                        Invoke(new Action(() => this.buttonClearGraph.Visible = true));
+                        Invoke(new Action(() => this.chartAccelerationTime.Visible = true));
+                        //Invoke(new Action(() => this.chartIntensityTime.Visible = true));
+                        //InitRGBgraphValues();
+                        //CreateCsvFile();             // TODO
+                    }
+                    break;
+
+                case CmdId.DCNN:                                         // Wartet auf "r" = "72"
+                    {
+                        comm.ClosePort();
+                        Invoke(new Action(() => labConnection.Text = "Disconnected"));
+                        Invoke(new Action(() => buttonConnect.Text = "Connect"));
+                        //clearTntensityTimeGraph();
+                        picStatusConnect.BackColor = System.Drawing.Color.Red;
+                    }
+                    break;
+
+                case CmdId.INTEG:                                         // Wartet auf "r" = "72"
+                    {
+                        Invoke(new Action(() => labIntegTimeVerif.Text = "New Integration Time wíll be now used!"));
+                    }
+                    break;
+
+                case CmdId.LEDAN:                                         // Wartet auf "r" = "72"
+                    {
+                        Invoke(new Action(() => checkLED.Checked = true));
+                        Invoke(new Action(() => labIntegTimeVerif.Text = "LEDs wíll be now used!"));
+                    }
+                    break;
+
+                case CmdId.LEDAUS:                                         // Wartet auf "r" = "72"
+                    {
+                        Invoke(new Action(() => checkLED.Checked = false));
+                        Invoke(new Action(() => labIntegTimeVerif.Text = "LEDs wíll not be now used!"));
+                    }
+                    break;
+
+            }
+        }
+
+        private bool parseSensorValuesRspPdu(string pdu, out int dRed, out int dGreen, out int dBlue, out int dSensNo)
+        {
+            char[] red = new char[4];
+            char[] green = new char[4];
+            char[] blue = new char[4];
+            char[] sensNo = new char[4];
+            int i, ri, gi, bi, sensNoi;
+
+            i = ri = gi = bi = sensNoi = 0;
+            char currentColor = 'R';
+            dRed = 0;
+            dGreen = 0;
+            dBlue = 0;
+            dSensNo = 0;
+
+            while (i < pdu.Length)
+            {
+                if (pdu[i] == 'R' || pdu[i] == 'G' || pdu[i] == 'B' || pdu[i] == 'S')          // if "R", "G" oder "B"
+                {
+                    currentColor = pdu[i];
+                }
+                else
+                {
+                    switch (currentColor)
+                    {
+                        case 'R': red[ri] = pdu[i]; ri++; break;
+                        case 'G': green[gi] = pdu[i]; gi++; break;
+                        case 'B': blue[bi] = pdu[i]; bi++; break;
+                        case 'S': sensNo[bi] = pdu[i]; sensNoi++; break;
+                    }
+                }
+                i++;
+            }
+            for (i = 0; i < ri; i++)
+            {
+                dRed += ((red[(ri - 1) - i] - '0') * IntPow(10, i));
+            }
+            for (i = 0; i < gi; i++)
+            {
+                dGreen += ((green[(gi - 1) - i] - '0') * IntPow(10, i));
+            }
+            for (i = 0; i < bi; i++)
+            {
+                dBlue += ((blue[(bi - 1) - i] - '0') * IntPow(10, i));
+            }
+            for (i = 0; i < sensNoi; i++)
+            {
+                dSensNo += ((sensNo[(sensNoi - 1) - i] - '0') * IntPow(10, i));
+            }
+
+            if (test)
+            {
+                if (refVal < 3400)
+                {
+                    refVal += 123;
+                }
+                else
+                {
+                    refVal -= 1870;
+                }
+                dRed += (refVal + 1);
+                dGreen += (refVal + 113);
+                dBlue += (refVal + 211);
+            }
+
+            return true;
+        }
+
+        private void processPdu(string pdu)
+        {
+            Invoke(new Action(() => labIntegTimeVerif.Visible = true));
+            Invoke(new Action(() => labIntegTimeVerif.Text = ""));
+
+            switch (pdu[0])
+            {
+                case 'r':
+                    processSuccessfulRspPdu();
+                    break;
+               
+                case 'S':
+                    {
+                        int dRed = 0;
+                        int dGreen = 0;
+                        int dBlue = 0;
+                        int dSensNo = 0;
+
+                        parseSensorValuesRspPdu(pdu, out dRed, out dGreen, out dBlue, out dSensNo);
+                        UpdateGuiForSensorValues(mCmd, dRed, dGreen, dBlue, (dSensNo));
+                    }
+                    break;
+
+                default:
+                    break;
+            }      
+        }
+        
+
+        private void UpdateButtonColor(CmdId mCmd, int dRed, int dGreen, int dBlue, int sensNo)
+        {
+            System.Windows.Media.Color myRgb = new System.Windows.Media.Color();
+
+            try
+            {
+                myRgb = System.Windows.Media.Color.FromRgb(Convert.ToByte(dRed / 16), Convert.ToByte(dGreen / 16), Convert.ToByte(dBlue / 16));
+            }
+            catch
+            {
+                return;
+            }
+
+            switch (sensNo)
+            {
+                case 5: 
+                    //myRgb = System.Windows.Media.Color.FromRgb(Convert.ToByte(dRed/16), Convert.ToByte(dGreen/16), Convert.ToByte(dBlue/16));
+                    Invoke(new Action(() => butSens1.BackColor = System.Drawing.Color.FromArgb(myRgb.A, myRgb.R, myRgb.G, myRgb.B)));
+                    break;
+
+                case 6:                    
+                    //myRgb = System.Windows.Media.Color.FromRgb(Convert.ToByte(dRed / 16), Convert.ToByte(dGreen / 16), Convert.ToByte(dBlue / 16));
+                    Invoke(new Action(() => butSens2.BackColor = System.Drawing.Color.FromArgb(myRgb.A, myRgb.R, myRgb.G, myRgb.B)));
+                    break;
+
+                case 7:
+                    //myRgb = System.Windows.Media.Color.FromRgb(Convert.ToByte(dRed / 16), Convert.ToByte(dGreen / 16), Convert.ToByte(dBlue / 16));
+                    Invoke(new Action(() => butSens3.BackColor = System.Drawing.Color.FromArgb(myRgb.A, myRgb.R, myRgb.G, myRgb.B)));
+                    break;
+
+                case 8:
+                    //myRgb = System.Windows.Media.Color.FromRgb(Convert.ToByte(dRed / 16), Convert.ToByte(dGreen / 16), Convert.ToByte(dBlue / 16));
+                    Invoke(new Action(() => butSens4.BackColor = System.Drawing.Color.FromArgb(myRgb.A, myRgb.R, myRgb.G, myRgb.B)));
+                    break;
+
+                case 4:                    
+                    //myRgb = System.Windows.Media.Color.FromRgb(Convert.ToByte(dRed / 16), Convert.ToByte(dGreen / 16), Convert.ToByte(dBlue / 16));
+                    Invoke(new Action(() => butSens5.BackColor = System.Drawing.Color.FromArgb(myRgb.A, myRgb.R, myRgb.G, myRgb.B)));
+                    break;
+
+                case 3:
+                    //myRgb = System.Windows.Media.Color.FromRgb(Convert.ToByte(dRed / 16), Convert.ToByte(dGreen / 16), Convert.ToByte(dBlue / 16));
+                    Invoke(new Action(() => butSens6.BackColor = System.Drawing.Color.FromArgb(myRgb.A, myRgb.R, myRgb.G, myRgb.B)));
+                    break;
+
+                case 2:
+                    //myRgb = System.Windows.Media.Color.FromRgb(Convert.ToByte(dRed / 16), Convert.ToByte(dGreen / 16), Convert.ToByte(dBlue / 16));
+                    Invoke(new Action(() => butSens7.BackColor = System.Drawing.Color.FromArgb(myRgb.A, myRgb.R, myRgb.G, myRgb.B)));
+                    break;
+
+                case 1:
+                    //myRgb = System.Windows.Media.Color.FromRgb(Convert.ToByte(dRed / 16), Convert.ToByte(dGreen / 16), Convert.ToByte(dBlue / 16));
+                    Invoke(new Action(() => butSens8.BackColor = System.Drawing.Color.FromArgb(myRgb.A, myRgb.R, myRgb.G, myRgb.B)));
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+        private void UpdateRGBnumericValues(CmdId mCmd, int dRed, int dGreen, int dBlue, int sensNo)
+        {
+            switch (sensNo)
+            {
+                //case CmdId.SENSVAL1:
+                case 5:
+                    Invoke(new Action(() => labSens1R.Text = dRed.ToString()));
+                    //Invoke(new Action(() => labSens1R.Text = sensNo.ToString()));
+                    Invoke(new Action(() => labSens1G.Text = dGreen.ToString()));
+                    Invoke(new Action(() => labSens1B.Text = dBlue.ToString()));
+                    break;
+
+                case 6:
+                    Invoke(new Action(() => labSens2R.Text = dRed.ToString()));
+                    //Invoke(new Action(() => labSens2R.Text = sensNo.ToString()));
+                    Invoke(new Action(() => labSens2G.Text = dGreen.ToString()));
+                    Invoke(new Action(() => labSens2B.Text = dBlue.ToString()));
+                    break;
+
+                case 7:
+                    Invoke(new Action(() => labSens3R.Text = dRed.ToString()));
+                    //Invoke(new Action(() => labSens3R.Text = sensNo.ToString()));
+                    Invoke(new Action(() => labSens3G.Text = dGreen.ToString()));
+                    Invoke(new Action(() => labSens3B.Text = dBlue.ToString()));
+                    break;
+
+                case 8:
+                    Invoke(new Action(() => labSens4R.Text = dRed.ToString()));
+                    //Invoke(new Action(() => labSens4R.Text = sensNo.ToString()));
+                    Invoke(new Action(() => labSens4G.Text = dGreen.ToString()));
+                    Invoke(new Action(() => labSens4B.Text = dBlue.ToString()));
+                    break;
+
+                case 4:
+                    Invoke(new Action(() => labSens5R.Text = dRed.ToString()));
+                    //Invoke(new Action(() => labSens5R.Text = sensNo.ToString()));
+                    Invoke(new Action(() => labSens5G.Text = dGreen.ToString()));
+                    Invoke(new Action(() => labSens5B.Text = dBlue.ToString()));
+                    break;
+
+                case 3:
+                    Invoke(new Action(() => labSens6R.Text = dRed.ToString()));
+                    //Invoke(new Action(() => labSens6R.Text = sensNo.ToString()));
+                    Invoke(new Action(() => labSens6G.Text = dGreen.ToString()));
+                    Invoke(new Action(() => labSens6B.Text = dBlue.ToString()));
+                    break;
+
+                case 2:
+                    Invoke(new Action(() => labSens7R.Text = dRed.ToString()));
+                    //Invoke(new Action(() => labSens7R.Text = sensNo.ToString()));
+                    Invoke(new Action(() => labSens7G.Text = dGreen.ToString()));
+                    Invoke(new Action(() => labSens7B.Text = dBlue.ToString()));
+                    break;
+
+                case 1:
+                    Invoke(new Action(() => labSens8R.Text = dRed.ToString()));
+                    //Invoke(new Action(() => labSens8R.Text = sensNo.ToString()));
+                    Invoke(new Action(() => labSens8G.Text = dGreen.ToString()));
+                    Invoke(new Action(() => labSens8B.Text = dBlue.ToString()));
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+        private void ResetRGBgraphValues()
+        {
+            for(int sensNo = 1; sensNo <= 8; sensNo++)
+            {
+                UpdateRGBgraphValues(0, 0, 0, sensNo);
+            }
+        }
+
+        private void UpdateRGBgraphValues(int dRed, int dGreen, int dBlue, int sensNo)
+        {
+            switch (sensNo)
+            {
+                case 5:
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Red"].Points.Clear()));
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Green"].Points.Clear()));
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Blue"].Points.Clear()));
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Blue"].Points[1].SetValueY(dBlue)));
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Red"].Points[1].SetValueY(dRed)));
+                    ////////////Invoke(new Action(() => chartColorSensorNr.Series["Sensor Green"].Points[1].SetValueY(dGreen)));
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Blue"].Points[0].YValues.SetValue(dBlue,0)));
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Red"].Points[0].YValues.SetValue(dRed, 0)));
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Green"].Points[0].YValues.SetValue(dGreen, 0)));
+                    //Invoke(new Action(() => this.chartColorSensorNr.Update()));
+                    ////Invoke(new Action(() => chartColorSensorNr.Series["Sensor Blue"].Points. = dBlue));
+                    ////Invoke(new Action(() => chartColorSensorNr.Series["Sensor Red"].Points.RemoveAt(4)));                    
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Red"].Points.RemoveAt(1)));
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Red"].Points.InsertXY(1, 1, dRed)));
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Green"].Points.InsertXY(1, 1, dGreen)));
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Blue"].Points.InsertXY(1, 1, dBlue)));
+                    Invoke(new Action(() => chartColorSensorNr.Series["Sensor Red"].Points[0].YValues[0] = dRed));
+                    Invoke(new Action(() => chartColorSensorNr.Series["Sensor Green"].Points[0].YValues[0] = dGreen));
+                    Invoke(new Action(() => chartColorSensorNr.Series["Sensor Blue"].Points[0].YValues[0] = dBlue));
+
+                    ////Invoke(new Action(() => chartColorSensorNr.Series["Sensor Red"].Points.AddXY(1, dRed)));
+                    ////Invoke(new Action(() => chartColorSensorNr.Series["Sensor Green"].Points.AddXY(1, dGreen)));
+                    ////Invoke(new Action(() => chartColorSensorNr.Series["Sensor Blue"].Points.AddXY(1, dBlue)));
+                    break;
+
+                case 6:
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Blue"].Points[1].YValues[0] = dBlue));
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Red"].Points[1].YValues[0] = dRed));
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Green"].Points[1].YValues[0] = dGreen));
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Red"].Points.AddXY(2, dRed)));
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Green"].Points.AddXY(2, dGreen)));
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Blue"].Points.AddXY(2, dBlue)));
+                    Invoke(new Action(() => chartColorSensorNr.Series["Sensor Red"].Points[1].YValues[0] = dRed));
+                    Invoke(new Action(() => chartColorSensorNr.Series["Sensor Green"].Points[1].YValues[0] = dGreen));
+                    Invoke(new Action(() => chartColorSensorNr.Series["Sensor Blue"].Points[1].YValues[0] = dBlue));
+                    break;
+
+                case 7:
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Blue"].Points[2].YValues[0] = dBlue));
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Red"].Points[2].YValues[0] = dRed));
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Green"].Points[2].YValues[0] = dGreen));
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Red"].Points.AddXY(3, dRed)));
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Green"].Points.AddXY(3, dGreen)));
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Blue"].Points.AddXY(3, dBlue)));
+                    Invoke(new Action(() => chartColorSensorNr.Series["Sensor Red"].Points[2].YValues[0] = dRed));
+                    Invoke(new Action(() => chartColorSensorNr.Series["Sensor Green"].Points[2].YValues[0] = dGreen));
+                    Invoke(new Action(() => chartColorSensorNr.Series["Sensor Blue"].Points[2].YValues[0] = dBlue));
+                    break;
+
+                case 8:
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Blue"].Points[3].YValues[0] = dBlue));
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Red"].Points[3].YValues[0] = dRed));
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Green"].Points[3].YValues[0] = dGreen));
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Red"].Points.AddXY(4, dRed)));
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Green"].Points.AddXY(4, dGreen)));
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Blue"].Points.AddXY(4, dBlue)));
+                    Invoke(new Action(() => chartColorSensorNr.Series["Sensor Red"].Points[3].YValues[0] = dRed));
+                    Invoke(new Action(() => chartColorSensorNr.Series["Sensor Green"].Points[3].YValues[0] = dGreen));
+                    Invoke(new Action(() => chartColorSensorNr.Series["Sensor Blue"].Points[3].YValues[0] = dBlue));
+                    break;
+
+                case 4:
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Blue"].Points[4].YValues[0] = dBlue));
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Red"].Points[4].YValues[0] = dRed));
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Green"].Points[4].YValues[0] = dGreen));
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Red"].Points.AddXY(5, dRed)));
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Green"].Points.AddXY(5, dGreen)));
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Blue"].Points.AddXY(5, dBlue)));
+                    Invoke(new Action(() => chartColorSensorNr.Series["Sensor Red"].Points[4].YValues[0] = dRed));
+                    Invoke(new Action(() => chartColorSensorNr.Series["Sensor Green"].Points[4].YValues[0] = dGreen));
+                    Invoke(new Action(() => chartColorSensorNr.Series["Sensor Blue"].Points[4].YValues[0] = dBlue));
+                    break;
+
+                case 3:
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Blue"].Points[5].YValues[0] = dBlue));
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Red"].Points[5].YValues[0] = dRed));
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Green"].Points[5].YValues[0] = dGreen));
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Red"].Points.AddXY(6, dRed)));
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Green"].Points.AddXY(6, dGreen)));
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Blue"].Points.AddXY(6, dBlue)));
+                    Invoke(new Action(() => chartColorSensorNr.Series["Sensor Red"].Points[5].YValues[0] = dRed));
+                    Invoke(new Action(() => chartColorSensorNr.Series["Sensor Green"].Points[5].YValues[0] = dGreen));
+                    Invoke(new Action(() => chartColorSensorNr.Series["Sensor Blue"].Points[5].YValues[0] = dBlue));
+                    break;
+
+                case 2:
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Blue"].Points[6].YValues[0] = dBlue));
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Red"].Points[6].YValues[0] = dRed));
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Green"].Points[6].YValues[0] = dGreen));
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Red"].Points.AddXY(7, dRed)));
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Green"].Points.AddXY(7, dGreen)));
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Blue"].Points.AddXY(7, dBlue)));
+                    Invoke(new Action(() => chartColorSensorNr.Series["Sensor Red"].Points[6].YValues[0] = dRed));
+                    Invoke(new Action(() => chartColorSensorNr.Series["Sensor Green"].Points[6].YValues[0] = dGreen));
+                    Invoke(new Action(() => chartColorSensorNr.Series["Sensor Blue"].Points[6].YValues[0] = dBlue));
+                    break;
+
+                case 1:
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Blue"].Points[7].YValues[0] = dBlue));
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Red"].Points[7].YValues[0] = dRed));
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Green"].Points[7].YValues[0] = dGreen));
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Red"].Points.AddXY(8, dRed)));
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Green"].Points.AddXY(8, dGreen)));
+                    //Invoke(new Action(() => chartColorSensorNr.Series["Sensor Blue"].Points.AddXY(8, dBlue)));
+                    Invoke(new Action(() => chartColorSensorNr.Series["Sensor Red"].Points[7].YValues[0] = dRed));
+                    Invoke(new Action(() => chartColorSensorNr.Series["Sensor Green"].Points[7].YValues[0] = dGreen));
+                    Invoke(new Action(() => chartColorSensorNr.Series["Sensor Blue"].Points[7].YValues[0] = dBlue));
+                    break;
+
+                default:
+                    break;
+            }
+            Invoke(new Action(() => chartColorSensorNr.Series["Sensor Blue"].Points.AddXY(6, 0))); // Dummy
+        }
+
+        private void InitRGBgraphValues()
+        {
+            for (int sensNo = 1; sensNo <= 8; sensNo++)
+            {
+                switch (sensNo)
+                {
+                    case 8:                     
+                    case 7:
+                    case 6:
+                    case 5:
+                    case 4:
+                    case 3:
+                    case 2:
+                    case 1:
+                        Invoke(new Action(() => chartColorSensorNr.Series["Sensor Red"].Points.AddXY(sensNo, 0)));
+                        Invoke(new Action(() => chartColorSensorNr.Series["Sensor Green"].Points.AddXY(sensNo, 0)));
+                        Invoke(new Action(() => chartColorSensorNr.Series["Sensor Blue"].Points.AddXY(sensNo, 0)));
+                        break;
+
+                    default:
+                        break;
+                }
+                Invoke(new Action(() => chartColorSensorNr.ChartAreas[0].AxisX.CustomLabels.Add(0.5, 1.5, "80cm")));
+                Invoke(new Action(() => chartColorSensorNr.ChartAreas[0].AxisX.CustomLabels.Add(1.5, 2.5, "70cm")));
+                Invoke(new Action(() => chartColorSensorNr.ChartAreas[0].AxisX.CustomLabels.Add(2.5, 3.5, "60cm")));
+                Invoke(new Action(() => chartColorSensorNr.ChartAreas[0].AxisX.CustomLabels.Add(3.5, 4.5, "50cm")));
+                Invoke(new Action(() => chartColorSensorNr.ChartAreas[0].AxisX.CustomLabels.Add(4.5, 5.5, "40cm")));
+                Invoke(new Action(() => chartColorSensorNr.ChartAreas[0].AxisX.CustomLabels.Add(5.5, 6.5, "30cm")));
+                Invoke(new Action(() => chartColorSensorNr.ChartAreas[0].AxisX.CustomLabels.Add(6.5, 7.5, "20cm")));
+                Invoke(new Action(() => chartColorSensorNr.ChartAreas[0].AxisX.CustomLabels.Add(7.5, 8.5, "10cm")));
+              
+            }
+
+    }
+
+        private void UpdateIntensityGraphValues(CmdId mCmd, int dRed, int dGreen, int dBlue, int sensNo)
+        {
+            System.Drawing.Color color;
+            try
+            {
+                color = System.Drawing.Color.FromArgb(dRed / 16, dGreen / 16, dBlue / 16);
+            }
+            catch
+            {
+                return;
+            }
+
+            float hue = color.GetHue();
+            float saturation = color.GetSaturation();
+            float lightness = color.GetBrightness();
+
+            //switch (mCmd)
+            switch (sensNo)
+            {
+                case 5:
+                    Invoke(new Action(() => chartIntensityTime.Series["80cm"].Points.AddXY(
+                                     count,                // X value is a date
+                                     saturation)));
+                    ////(dRed + dGreen + dBlue) / 3)));
+                    break;
+
+                case 6:
+                    Invoke(new Action(() => chartIntensityTime.Series["70cm"].Points.AddXY(
+                                     count,                // X value is a date
+                                     saturation)));
+                    ////(dRed + dGreen + dBlue) / 3)));
+                    break;
+
+                case 7:
+                    Invoke(new Action(() => chartIntensityTime.Series["60cm"].Points.AddXY(
+                                      count,                // X value is a date
+                                      saturation)));
+                    ////(dRed + dGreen + dBlue) / 3)));
+                    break;
+
+                case 8:
+                    Invoke(new Action(() => chartIntensityTime.Series["50cm"].Points.AddXY(
+                                      count,                // X value is a Time
+                                      saturation)));
+                    ////(dRed + dGreen + dBlue) / 3)));
+                    break;
+
+                case 4:
+                    Invoke(new Action(() => chartIntensityTime.Series["40cm"].Points.AddXY(
+                                     count,                // X value is a Time
+                                     saturation)));
+                    ////(dRed + dGreen + dBlue) / 3)));
+                    break;
+
+                case 3:
+                    Invoke(new Action(() => chartIntensityTime.Series["30cm"].Points.AddXY(
+                                     count,                // X value is a Time
+                                     saturation)));
+                    ////(dRed + dGreen + dBlue) / 3)));
+                    break;
+
+                case 2:
+                    Invoke(new Action(() => chartIntensityTime.Series["20cm"].Points.AddXY(
+                                      count,                // X value is a Time
+                                      saturation)));
+                    //(dRed + dGreen + dBlue) / 3)));
+                    break;
+
+                case 1:
+                    Invoke(new Action(() => chartIntensityTime.Series["10cm"].Points.AddXY(
+                                      count,                // X value is a Time
+                                      saturation)));
+                    ////(dRed + dGreen + dBlue) / 3)));
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+        private void UpdateGuiForSensorValues(CmdId mCmd, int dRed, int dGreen, int dBlue, int sensNo)
+        {
+            UpdateRGBnumericValues(mCmd, dRed, dGreen, dBlue, sensNo);
+            UpdateRGBgraphValues(dRed, dGreen, dBlue, sensNo);
+            UpdateIntensityGraphValues(mCmd, dRed, dGreen, dBlue, sensNo);
+            UpdateButtonColor(mCmd, dRed, dGreen, dBlue, sensNo);
+
+            SendNextSensorScanRequest();
+            
+        }
+
+        private void SendNextSensorScanRequest()
+        {
+            object q = new object();
+            EventArgs e = new EventArgs();
+
+            switch (mCmd)
+            {
+                case CmdId.SENSVAL1:
+                    if ((checkBoxPeriodisch.Checked) || (isAllLEDs))
+                    {
+                        butSens2_Click(q, e);
+                    }
+                    break;
+
+                case CmdId.SENSVAL2:
+                    if ((checkBoxPeriodisch.Checked) || (isAllLEDs))
+                    {
+                        butSens3_Click(q, e);
+                    }
+                    break;
+
+                case CmdId.SENSVAL3:
+                    if ((checkBoxPeriodisch.Checked) || (isAllLEDs))
+                    {
+                        butSens4_Click(q, e);
+                    }
+                    break;
+
+                case CmdId.SENSVAL4:
+                    if ((checkBoxPeriodisch.Checked) || (isAllLEDs))
+                    {
+                        butSens5_Click(q, e);
+                    }
+                    break;
+
+                case CmdId.SENSVAL5:
+                    if ((checkBoxPeriodisch.Checked) || (isAllLEDs))
+                    {
+                        butSens6_Click(q, e);
+                    }
+                    break;
+
+                case CmdId.SENSVAL6:
+                    if ((checkBoxPeriodisch.Checked) || (isAllLEDs))
+                    {
+                        butSens7_Click(q, e);
+                    }
+                    break;
+
+                case CmdId.SENSVAL7:
+                    if ((checkBoxPeriodisch.Checked) || (isAllLEDs))
+                    {
+                        butSens8_Click(q, e);
+                    }
+                    break;
+
+                case CmdId.SENSVAL8:
+                    //if (checkBoxPeriodisch.Checked)
+                    {
+                        WriteToCsvFile();          // TODO
+                    }
+                    if (isAllLEDs)
+                        isAllLEDs = false;
+                    break;
+
+                default:
+                    break;
+            }
+
+        }
+        /********************** Sensor Buttons Functions *******************************************/
+
+
+        private void handleButtonSensorclick(int sensNum)
+        {
+            if (labConnection.Text == "Connected")
+            {                
+                comm.SendSensorScanRequest(sensNum);             
+            }
+            else
+            {
+                labIntegTimeVerif.Text = "Connect with the Grenzschicht Sensor!";
+                labIntegTimeVerif.Visible = true;
+            }
+        }
+
+        private void butSens1_Click(object sender, EventArgs e)
+        {
+            mCmd = CmdId.SENSVAL1;
+            handleButtonSensorclick(5);
+        }
+
+        private void butSens2_Click(object sender, EventArgs e)
+        {            
+            mCmd = CmdId.SENSVAL2;
+            handleButtonSensorclick(6);
+        }
+
+        private void butSens3_Click(object sender, EventArgs e)
+        {                           
+            mCmd = CmdId.SENSVAL3;
+            handleButtonSensorclick(7);            
+        }
+
+        private void butSens4_Click(object sender, EventArgs e)
+        {
+            mCmd = CmdId.SENSVAL4;
+            handleButtonSensorclick(8);         
+        }
+
+        private void butSens5_Click(object sender, EventArgs e)
+        {
+            mCmd = CmdId.SENSVAL5;
+            handleButtonSensorclick(4);
+        }
+
+        private void butSens6_Click(object sender, EventArgs e)
+        {
+             mCmd = CmdId.SENSVAL6;
+             handleButtonSensorclick(3);                
+        }
+
+        private void butSens7_Click(object sender, EventArgs e)
+        {
+             mCmd = CmdId.SENSVAL7;
+             handleButtonSensorclick(2);                    
+        }
+
+        private void butSens8_Click(object sender, EventArgs e)
+        {                
+            mCmd = CmdId.SENSVAL8;
+            handleButtonSensorclick(1);
+        }
+
+        private void butSensAll_Click(object sender, EventArgs e)
+        {            
+            isAllLEDs = true;
+            butSens1_Click(sender, e);
+            count++;
+        }
+
+        // All Sensors Scan
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            butSensAll_Click(sender, e);
+        }
+       
+
+        /********************** LED Functions *******************************************/
+        private void ledButtonClicked(object sender, EventArgs e)
+        {
+            if (labConnection.Text == "Connected")
+            {
+                if (!checkLED.Checked)
+                {
+                    // Schickt signal an uC dass die LEDs benutzt werden sollen
+                    comm.SendLedStateChangeRequest(true);
+                    mCmd = CmdId.LEDAN;                   
+                }
+                else
+                {
+                    // Schickt signal an uC dass die LEDs nicht benutzt werden sollen
+                    comm.SendLedStateChangeRequest(false);                    
+                    mCmd = CmdId.LEDAUS;                    
+                }
+            }
+            else
+            {
+                labIntegTimeVerif.Text = "Connect with the Grenzschicht Sensor!";
+                labIntegTimeVerif.Visible = true;
+            }
+        }
+
+        /********************** Time Periode Functions *******************************************/
+
+        private void checkBoxPeriodisch_Paint(object sender, PaintEventArgs e)
+        {
+            ControlPaint.DrawBorder(e.Graphics, checkBoxPeriodisch.ClientRectangle,
+            SystemColors.ControlLightLight, 3, ButtonBorderStyle.Outset,
+            SystemColors.ControlLightLight, 3, ButtonBorderStyle.Outset,
+            SystemColors.ControlLightLight, 3, ButtonBorderStyle.Outset,
+            SystemColors.ControlLightLight, 3, ButtonBorderStyle.Outset);
+        }
+
+        
+        private void butConnect_Paint(object sender, PaintEventArgs e)
+        {
+            ControlPaint.DrawBorder(e.Graphics, buttonConnect.ClientRectangle,
+            SystemColors.ControlLightLight, 3, ButtonBorderStyle.Outset,
+            SystemColors.ControlLightLight, 3, ButtonBorderStyle.Outset,
+            SystemColors.ControlLightLight, 3, ButtonBorderStyle.Outset,
+            SystemColors.ControlLightLight, 3, ButtonBorderStyle.Outset);
+        }
+
+        private void buttonClearGraph_Paint(object sender, PaintEventArgs e)
+        {
+            ControlPaint.DrawBorder(e.Graphics, buttonClearGraph.ClientRectangle,
+            SystemColors.ControlLightLight, 3, ButtonBorderStyle.Outset,
+            SystemColors.ControlLightLight, 3, ButtonBorderStyle.Outset,
+            SystemColors.ControlLightLight, 3, ButtonBorderStyle.Outset,
+            SystemColors.ControlLightLight, 3, ButtonBorderStyle.Outset);
+        }
+
+        private void checkBoxPeriodisch_CheckedChanged(object sender, EventArgs e)
+        {
+            if (labConnection.Text == "Connected")
+            {
+                if (!checkBoxPeriodisch.Checked)
+                {
+                    checkBoxPeriodisch.Checked = true;
+                    checkBoxPeriodisch.Text = "Stop Scan";
+                    timerPeriode.Enabled = true;                    
+                    butSensAll_Click(sender, e);
+                }
+                else
+                {
+                    checkBoxPeriodisch.Checked = false;
+                    checkBoxPeriodisch.Text = "Start Scan";
+                    timerPeriode.Enabled = false;
+                }                  
+            }
+            else
+            {
+                labIntegTimeVerif.Text = "Connect with the Grenzschicht Sensor!";
+                labIntegTimeVerif.Visible = true;
+            }
+        }
+        
+        private void timerPeriode_Tick(object sender, EventArgs e)
+        {
+            //count++;         
+            butSensAll_Click(sender, e);
+        }
+        
+        /********************** Integrationszeit Functions *******************************************/
+        
+        private void textBoxIntegTime_Leave(object sender, EventArgs e)
+        {
+            txtBoxIntegChangeHandler();
+        }
+
+
+        private void textBoxIntegTime_keyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData != Keys.Enter) return;
+            txtBoxIntegChangeHandler();
+        }
+
+        private void comboBoxIntTime_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtBoxIntegChangeHandler();
+        }
+
+        private void txtBoxIntegChangeHandler()
+        {
+            if (labConnection.Text == "Connected")
+            {
+                comm.SendIntegrationTimeChangeRequest(comboBoxIntTime.Text);
+                mCmd = CmdId.INTEG;
+            }
+            else
+            {
+                labIntegTimeVerif.Text = "Connect with the Grenzschicht Sensor!";
+                comboBoxIntTime.Text = "50";
+                labIntegTimeVerif.Visible = true;
+            }
+        }
+        
+        /********************** CSV File Access Functions *******************************************/
+        private void CreateCsvFile()
+        {  
+            var time = DateTime.Now;
+            string formattedTime = time.ToString("yyyy,MM,dd_hh,mm,ss");
+            //string fileName = "GUImessungen_" + formattedTime + ".csv";
+            string fileName = "GUImessungen" + ".csv";
+
+            mFilePath = (Environment.GetFolderPath(Environment.SpecialFolder.Desktop)) + @"\" + fileName;
+                            
+            {         
+                try
+                {
+                    // using (System.IO.StreamWriter mCsv = new System.IO.StreamWriter(mFilePath, false))
+                    using (System.IO.StreamWriter mCsv = new System.IO.StreamWriter(mFilePath, true))
+                    {
+                        mCsv.Flush();
+                        mFileIndex = 0;
+                        var line = string.Empty;
+
+                        line = string.Format("{0};{1}", Environment.NewLine, formattedTime);
+                        mCsv.WriteLine(line);
+
+                        if (!File.Exists(mFilePath))
+                        {
+                            line = string.Format("{0};{1};{2};{3};{4};{5};{6};{7};" +
+                                                     "{8};{9};{10};{11};{12};{13};{14};{15};" +
+                                                     "{16};{17};{18};{19};{20};{21};{22};{23};" +
+                                                     "{24};{25};{26};{27};{28}"
+                                                     //+";{29}",                                                
+                                                     ////Environment.NewLine
+                                                     ,
+                                                     "Serial Nummer", "LED status", "Integrationszeit", "Period",
+                                                     "Sensor 1 Rot", "Sensor 1 Gruen", "Sensor 1 Blau",
+                                                     "Sensor 2 Rot", "Sensor 2 Gruen", "Sensor 2 Blau",
+                                                     "Sensor 3 Rot", "Sensor 3 Gruen", "Sensor 3 Blau",
+                                                     "Sensor 4 Rot", "Sensor 4 Gruen", "Sensor 4 Blau",
+                                                     "Sensor 5 Rot", "Sensor 5 Gruen", "Sensor 5 Blau",
+                                                     "Sensor 6 Rot", "Sensor 6 Gruen", "Sensor 6 Blau",
+                                                     "Sensor 7 Rot", "Sensor 7 Gruen", "Sensor 7 Blau",
+                                                     "Sensor 8 Rot", "Sensor 8 Gruen", "Sensor 8 Blau",
+                                                     Environment.NewLine);
+                            mCsv.WriteLine(line);
+                        }
+                        
+                    }
+                }
+                catch (System.IO.IOException)
+                {
+                    // log exception
+                    MessageBox.Show("File Open Failed");
+                }
+            }
+        }
+
+        private void WriteToCsvFile()
+        {
+            if (mFilePath == string.Empty)
+                return;
+            try
+            {
+                using (var w = new System.IO.StreamWriter(mFilePath, true))
+                {
+                    mFileIndex++;
+                    string ledStatus;
+                    string period;
+                    string integrationZeit;
+
+                    if (checkLED.Checked == true)
+                    {
+                        ledStatus = "Y";
+                    }
+                    else
+                    {
+                        ledStatus = "N";
+                    }
+
+                    if (checkBoxPeriodisch.Checked == true)
+                    {
+                        period = comboBoxTimePeriod.Text + "s";
+                    }
+                    else
+                    {
+                        period = "X";
+                    }
+                    integrationZeit = comboBoxIntTime.Text + "ms";
+
+                    var line = string.Format("{0};{1};{2};{3};{4};{5};{6};{7};" +
+											 "{8};{9};{10};{11};{12};{13};{14};{15};" +
+											 "{16};{17};{18};{19};{20};{21};{22};{23};" +
+											 "{24};{25};{26};{27}",
+                                             mFileIndex.ToString(), ledStatus, integrationZeit, period,
+                                             labSens1R.Text, labSens1G.Text, labSens1B.Text,
+                                             labSens2R.Text, labSens2G.Text, labSens2B.Text,
+                                             labSens3R.Text, labSens3G.Text, labSens3B.Text,
+                                             labSens4R.Text, labSens4G.Text, labSens4B.Text,
+                                             labSens5R.Text, labSens5G.Text, labSens5B.Text,
+                                             labSens6R.Text, labSens6G.Text, labSens6B.Text,
+                                             labSens7R.Text, labSens7G.Text, labSens7B.Text,
+                                             labSens8R.Text, labSens8G.Text, labSens8B.Text
+                                             );
+                    w.WriteLine(line);
+                    w.Flush();
+                }
+            }
+            catch
+            {
+                //MessageBox.Show("");
+            }
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {           
+            timerPeriode.Interval = (Int32.Parse(comboBoxTimePeriod.Text)) * 1000;
+            labIntegTimeVerif.Text = "The Scan Interval is successfully changed!";
+            labIntegTimeVerif.Visible = true;
+        }
+
+        private void buttonClearGraph_Click(object sender, EventArgs e)
+        {
+            clearTntensityTimeGraph();
+        }
+
+        private void clearTntensityTimeGraph()
+        {
+            count = -1;
+            chartIntensityTime.Series["80cm"].Points.Clear(); //Removes all points like it should.
+            chartIntensityTime.Series["70cm"].Points.Clear(); //Removes all points like it should.
+            chartIntensityTime.Series["60cm"].Points.Clear(); //Removes all points like it should.
+            chartIntensityTime.Series["50cm"].Points.Clear(); //Removes all points like it should.
+            chartIntensityTime.Series["40cm"].Points.Clear(); //Removes all points like it should.
+            chartIntensityTime.Series["30cm"].Points.Clear(); //Removes all points like it should.
+            chartIntensityTime.Series["20cm"].Points.Clear(); //Removes all points like it should.
+            chartIntensityTime.Series["10cm"].Points.Clear(); //Removes all points like it should.            
+        }
+
+        private void buttonSens8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chartColorSensorNr_Click(object sender, EventArgs e)
+        {
+
+        }
+                
+        private void picSensor_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtConnect_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtConnect_SizeChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
+}

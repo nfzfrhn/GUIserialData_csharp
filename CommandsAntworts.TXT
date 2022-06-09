@@ -1,0 +1,8 @@
+GUI			FW
+
+CNN			CNN_0
+STARTLIVE		T"valTs" "valX" "valY" "valZ"  				z.B. T1111223 1111 456 -234
+STOPLIVE		STOPLIVE_0
+SET_"valId""val"	STAT_"valId""val"_0					z.B. SET_FDisabled STAT_FDisabled_0
+GET_"valId"		STAT_"valId""val"					z.B. GET_FDisabled STAT_FDisabled
+
